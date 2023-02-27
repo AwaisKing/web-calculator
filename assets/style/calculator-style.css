@@ -1,98 +1,67 @@
 :root {
-	--body-bg-color: #e0e5ec;
-	--bg-color: #e0e5ec;
-	--primary-font-color: rgba(144, 152, 168, 1);
-	--secondary-font-color: rgba(51, 64, 89, 1);
-	--soft-high-light: rgba(255, 255, 255, 0.43);
-	--dark-high-light: rgba(217, 210, 200, 0.51);
+    --body-bg-color: #e0e5ec;
+    --bg-color: #e0e5ec;
+    --primary-font-color: rgba(144, 152, 168, 1);
+    --secondary-font-color: rgba(51, 64, 89, 1);
+    --soft-high-light: rgba(255, 255, 255, 0.43);
+    --dark-high-light: rgba(217, 210, 200, 0.51);
 }
 
 [data-theme="dark"] {
-	--body-bg-color: #181818;
-	--bg-color: #131419;
-	--primary-font-color: #c7c7c7;
-	--secondary-font-color: #03a9f4;
-	--soft-high-light: rgba(255, 255, 255, 0.05);
-	--dark-high-light: rgba(0, 0, 0, 0.51);
+    --body-bg-color: #181818;
+    --bg-color: #131419;
+    --primary-font-color: #c7c7c7;
+    --secondary-font-color: #03a9f4;
+    --soft-high-light: rgba(255, 255, 255, 0.05);
+    --dark-high-light: rgba(0, 0, 0, 0.51);
 }
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	background: var(--body-bg-color);
-	color: var(--primary-font-color);
-}
-
-.calculator {
-	background: var(--bg-color);
-	color: var(--primary-font-color);
-}
-
-.display {
-	box-shadow: 4px 4px 14px 0 var(--dark-high-light),
-		-4px -4px 14px 0 var(--soft-high-light),
-		inset 4px 4px 5px 0 var(--dark-high-light),
-		inset -4px -4px 5px 0 var(--soft-high-light);
-	color: var(--secondary-font-color);
+    background: var(--body-bg-color);
+    color: var(--primary-font-color);
+    font-family: "Odibee Sans";
+    margin: 0;
 }
 
 .neumorphic {
-	box-shadow: 6px 6px 16px 0 var(--dark-high-light),
-		-6px -6px 16px 0 var(--soft-high-light);
-	border-radius: 50%;
-	transition: 0.1s all ease-in-out;
-	border: 1px solid var(--soft-high-light);
-	cursor: pointer;
+    box-shadow: 6px 6px 16px 0 var(--dark-high-light), -6px -6px 16px 0 var(--soft-high-light);
+    border-radius: 50%;
+    transition: 0.1s all ease-in-out;
+    border: 1px solid var(--soft-high-light);
+    cursor: pointer;
 }
 
 .neumorphic:hover {
-	box-shadow: inset 5px 5px 5px 0 var(--dark-high-light),
-		inset -5px -5px 5px 0 var(--soft-high-light);
-	color: var(--secondary-font-color);
-}
-
-/*
-  GRID LAYOUT & NON NEUMORPHIC 
-*/
-
-body {
-	font-family: "Odibee Sans";
-	margin: 0;
-}
-
-.display {
-	border-radius: 12px;
-	transition: 0.1s all ease-in-out;
-	height: 60px;
-	line-height: 60px;
-	text-align: right;
-	padding-right: 20px;
-	width: 100%;
-	font-size: 32px;
-	letter-spacing: 4px;
+    box-shadow: inset 5px 5px 5px 0 var(--dark-high-light), inset -5px -5px 5px 0 var(--soft-high-light);
+    color: var(--secondary-font-color);
 }
 
 .calculator {
-	box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(7, 1fr);
-	grid-template-areas: "toggle toggle toggle toggle""display display display display""c signed percent divide""seven eight nine times""four five six minus""one two three plus""zero zero decimal equals";
-	place-content: center;
-	gap: 25px;
-	border-radius: 20px;
-	padding: 50px 40px 40px 40px;
+    background: var(--bg-color);
+    color: var(--primary-font-color);
 
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: "toggle toggle toggle toggle" "display display display display" "c signed percent divide" "seven eight nine times" "four five six minus" "one two three plus" "zero zero decimal equals";
+    place-content: center;
+    gap: 25px;
+    border-radius: 20px;
+    padding: 50px 40px 40px 40px;
 
-	width: 95%;
-	/* Largura que vc quer, mais o padding lateral 40 + 40 */
-	max-width: calc(315px + 80px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 95%;
+    /* Largura que vc quer, mais o padding lateral 40 + 40 */
+    max-width: calc(315px + 80px);
 }
 
 .c,
@@ -114,201 +83,207 @@ body {
 .zero,
 .decimal,
 .equals {
-	text-align: center;
-	height: 60px;
-	width: 60px;
+    text-align: center;
+    height: 60px;
+    width: 60px;
 
-	display: grid;
-	place-content: center;
-}
-
-.zero {
-	width: 100%;
-	border-radius: 12px;
-}
-
-.toggle {
-	grid-area: toggle;
+    display: grid;
+    place-content: center;
 }
 
 .display {
-	grid-area: display;
-}
+    grid-area: display;
+    box-shadow: 4px 4px 14px 0 var(--dark-high-light), -4px -4px 14px 0 var(--soft-high-light),
+        inset 4px 4px 5px 0 var(--dark-high-light), inset -4px -4px 5px 0 var(--soft-high-light);
+    color: var(--secondary-font-color);
 
-.c {
-	grid-area: c;
-}
-
-.signed {
-	grid-area: signed;
-}
-
-.percent {
-	grid-area: percent;
-}
-
-.divide {
-	grid-area: divide;
-}
-
-.seven {
-	grid-area: seven;
-}
-
-.eight {
-	grid-area: eight;
-}
-
-.nine {
-	grid-area: nine;
-}
-
-.times {
-	grid-area: times;
-}
-
-.four {
-	grid-area: four;
-}
-
-.five {
-	grid-area: five;
-}
-
-.six {
-	grid-area: six;
-}
-
-.minus {
-	grid-area: minus;
-}
-
-.one {
-	grid-area: one;
-}
-
-.two {
-	grid-area: two;
-}
-
-.three {
-	grid-area: three;
-}
-
-.plus {
-	grid-area: plus;
-}
-
-.zero {
-	grid-area: zero;
-}
-
-.decimal {
-	grid-area: decimal;
-}
-
-.equals {
-	grid-area: equals;
+    border-radius: 12px;
+    transition: 0.1s all ease-in-out;
+    height: 60px;
+    line-height: 60px;
+    text-align: right;
+    padding-right: 20px;
+    width: 100%;
+    font-size: 32px;
+    letter-spacing: 4px;
 }
 
 .toggle {
-	width: 100%;
+    grid-area: toggle;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c {
+    grid-area: c;
+}
+
+.signed {
+    grid-area: signed;
+}
+
+.percent {
+    grid-area: percent;
+}
+
+.divide {
+    grid-area: divide;
+}
+
+.zero {
+    grid-area: zero;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.times {
+    grid-area: times;
+}
+
+.minus {
+    grid-area: minus;
+}
+
+.plus {
+    grid-area: plus;
+}
+
+.decimal {
+    grid-area: decimal;
+}
+
+.equals {
+    grid-area: equals;
 }
 
 .theme-switch-wrapper {
-	display: block;
-	float: right;
-	align-items: center;
+    display: block;
+    float: right;
+    align-items: center;
 }
 
 .theme-switch {
-	display: inline-block;
-	height: 34px;
-	position: relative;
-	width: 60px;
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
 }
 
 .theme-switch input {
-	display: none;
+    display: none;
 }
 
 .slider {
-	box-shadow: 4px 4px 16px 0 var(--dark-high-light),
-		-4px -4px 16px 0 var(--soft-high-light),
-		inset 4px 4px 5px 0 var(--dark-high-light),
-		inset -4px -4px 5px 0 var(--soft-high-light);
-	background-color: inherit;
-	bottom: 0;
-	cursor: pointer;
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	transition: 0.4s;
-	border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 4px 4px 16px 0 var(--dark-high-light), -4px -4px 16px 0 var(--soft-high-light),
+        inset 4px 4px 5px 0 var(--dark-high-light), inset -4px -4px 5px 0 var(--soft-high-light);
+    background-color: inherit;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .slider:before {
-	background-color: var(--bg-color);
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-	bottom: 4px;
-	content: "";
-	height: 22px;
-	left: 4px;
-	position: absolute;
-	transition: 0.4s;
-	width: 22px;
-}
-
-input:checked+.slider {
-	background-color: var(--bg-color);
-	box-shadow: 6px 6px 16px 0 var(--dark-high-light),
-		-6px -6px 16px 0 var(--soft-high-light),
-		inset 6px 6px 5px 0 var(--dark-high-light),
-		inset -6px -6px 5px 0 var(--soft-high-light);
-}
-
-input:checked+.slider:before {
-	background-color: var(--secondary-font-color);
-}
-
-input:checked+.slider:before {
-	transform: translateX(26px);
+    background-color: var(--bg-color);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    bottom: 4px;
+    content: "";
+    height: 22px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 22px;
 }
 
 .slider.round {
-	border-radius: 34px;
+    border-radius: 34px;
 }
 
 .slider.round:before {
-	border-radius: 50%;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--bg-color);
+    box-shadow: 6px 6px 16px 0 var(--dark-high-light), -6px -6px 16px 0 var(--soft-high-light),
+        inset 6px 6px 5px 0 var(--dark-high-light), inset -6px -6px 5px 0 var(--soft-high-light);
+}
+
+input:checked + .slider:before {
+    background-color: var(--secondary-font-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }
 
 @media (max-width: 425px) {
-	.calculator {
-		padding: 25px 20px 20px 20px;
-		gap: 15px;
-	}
+    .calculator {
+        padding: 25px 20px 20px 20px;
+        gap: 15px;
+    }
 
-	.c,
-	.signed,
-	.percent,
-	.divide,
-	.seven,
-	.eight,
-	.nine,
-	.times,
-	.four,
-	.five,
-	.six,
-	.minus,
-	.one,
-	.two,
-	.three,
-	.plus,
-	.decimal,
-	.equals {
-		height: 70px;
-		width: 70px;
-	}
+    .c,
+    .signed,
+    .percent,
+    .divide,
+    .seven,
+    .eight,
+    .nine,
+    .times,
+    .four,
+    .five,
+    .six,
+    .minus,
+    .one,
+    .two,
+    .three,
+    .plus,
+    .decimal,
+    .equals {
+        height: 70px;
+        width: 70px;
+    }
 }
