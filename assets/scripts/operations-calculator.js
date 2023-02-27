@@ -114,3 +114,27 @@ document.onpaste = e => {
 
     display.innerHTML = str;
 };
+
+function selectText() {
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(display);
+        range.select();
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(display);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+    }
+}
+
+document.oncopy = event => {
+    event.stopPropagation();
+    event.preventDefault();
+
+    display.focus();
+    selectText();
+    display.focus();
+
+    navigator.clipboard.writeText(`${display.innerHTML}`);
+};
