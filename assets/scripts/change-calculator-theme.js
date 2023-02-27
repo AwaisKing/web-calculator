@@ -2,22 +2,16 @@
 (() => {
     darkModeEnable = document.querySelector('.theme-switch input[type="checkbox"]');
 
-    function changeCalculatorTheme(data) {
-        if (data.target.checked) {
-            document.documentElement.setAttribute("data-theme", "dark");
-        } else {
-            document.documentElement.setAttribute("data-theme", "light");
-        }
+    function changeCalculatorTheme() {
+        document.documentElement.setAttribute("data-theme", darkModeEnable.checked ? "dark" : "light");
     }
 
-    darkModeEnable.addEventListener("change", changeCalculatorTheme);
-
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        darkModeEnable.checked = true;
-        changeCalculatorTheme(darkModeEnable);
-    }
+    darkModeEnable.checked = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    changeCalculatorTheme();
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", event => {
         darkModeEnable.checked = event.matches;
-        changeCalculatorTheme(darkModeEnable);
+        changeCalculatorTheme();
     });
+
+    darkModeEnable.addEventListener("change", changeCalculatorTheme);
 })();
