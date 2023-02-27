@@ -13,7 +13,7 @@ function changeCalculatorTheme(data) {
 
 darkModeEnable.addEventListener("change", changeCalculatorTheme, false);
 
-if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) darkModeEnable.checked = true;
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", event => {
-    darkModeEnable.checked = event.matches;
-});
+// if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) darkModeEnable.checked = true;
+// window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", event => {
+//     darkModeEnable.checked = event.matches;
+// });
