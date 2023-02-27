@@ -1,6 +1,7 @@
 /* Script para alterar o tema da Calculadora */
 
-if (themeChanger == undefined) themeChanger = document.querySelector('.theme-switch input[type="checkbox"]');
+if (darkModeEnable == undefined || darkModeEnable == null)
+    darkModeEnable = document.querySelector('.theme-switch input[type="checkbox"]');
 
 function changeCalculatorTheme(data) {
     if (data.target.checked) {
@@ -10,4 +11,9 @@ function changeCalculatorTheme(data) {
     }
 }
 
-themeChanger.addEventListener("change", changeCalculatorTheme, false);
+darkModeEnable.addEventListener("change", changeCalculatorTheme, false);
+
+if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) darkModeEnable.checked = true;
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", event => {
+    darkModeEnable.checked = event.matches;
+});
