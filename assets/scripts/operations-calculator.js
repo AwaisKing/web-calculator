@@ -95,3 +95,22 @@ window.onkeydown = evt => {
         console.log("not escape!", evt);
     }
 };
+
+
+document.onpaste = e => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    let m;
+    let str = "";
+    let regex = /\d+/gm;
+    let clipboardData = e.clipboardData || window.clipboardData || e.originalEvent.clipboardData;
+    let pastedData = clipboardData ? clipboardData.getData("Text") : "";
+
+    while ((m = regex.exec(pastedData)) !== null) {
+        if (m.index === regex.lastIndex) regex.lastIndex++;
+        m.forEach(match => { str += match; });
+    }
+
+    display.innerHTML = str;
+};
