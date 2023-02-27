@@ -1,11 +1,10 @@
+var display = document.querySelector(".display");
 var buttons = document.querySelectorAll("span");
-var btnClear = document.querySelector(".c.neumorphic");
 var operators = ["+", "-", "x", "÷"];
 var decimalButtonState = false;
 
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].onclick = function (preventPageChange) {
-        var display = document.querySelector(".display");
         var inputVal = display.innerHTML;
         var btnVal = this.innerHTML;
 
@@ -55,11 +54,31 @@ for (var i = 0; i < buttons.length; i++) {
 
 window.onkeydown = evt => {
     evt = evt || window.event;
-    var isEscape = false;
+    let hasKey = "key" in evt;
 
-    isEscape = "key" in evt ? evt.key === "Escape" || evt.key === "Esc" : evt.keyCode === 27;
-    if (isEscape) btnClear.click();
+    function btnClicker(clsName) {
+        let clickBtn = Array.prototype.find.call(buttons, btn => btn.className.indexOf(clsName + " neumorphic") != -1);
+        if (clickBtn !== undefined && clickBtn !== null) clickBtn.click();
+    }
+
+    if (hasKey ? evt.key === "Escape" || evt.key === "Esc" : evt.keyCode === 27) btnClicker("c");
     else {
+        if (hasKey ? evt.key === "=" || evt.key === "Equal" : evt.keyCode === 187) {
+            btnClicker("equals");
+        } else if (hasKey ? evt.key === "+" || evt.key === "Plus" : evt.keyCode === 171) {
+            btnClicker("plus");
+        }
+        // key: '1', code: 'Digit1'
+        // key: '2', code: 'Digit2'
+        // key: '3', code: 'Digit3'
+        // key: '4', code: 'Digit4'
+        // key: '5', code: 'Digit5'
+        // key: '6', code: 'Digit6'
+        // key: '7', code: 'Digit7'
+        // key: '8', code: 'Digit8'
+        // key: '9', code: 'Digit9'
+        // key: '0', code: 'Digit0'
+
         console.log("not escape!", evt);
     }
 };
