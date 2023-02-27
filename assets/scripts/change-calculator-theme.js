@@ -1,7 +1,6 @@
 /* Script para alterar o tema da Calculadora */
 
-if (darkModeEnable == undefined) darkModeEnable = document.querySelector('.theme-switch input[type="checkbox"]');
-if (darkModeEnable == null) darkModeEnable = document.querySelector('.theme-switch input[type="checkbox"]');
+darkModeEnable = document.querySelector('.theme-switch input[type="checkbox"]');
 
 function changeCalculatorTheme(data) {
     if (data.target.checked) {
