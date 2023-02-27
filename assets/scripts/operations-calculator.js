@@ -63,22 +63,21 @@ window.onkeydown = evt => {
 
     if (hasKey ? evt.key === "Escape" || evt.key === "Esc" : evt.keyCode === 27) btnClicker("c");
     else {
-        if (hasKey ? evt.key === "=" || evt.key === "Equal" : evt.keyCode === 187) {
-            btnClicker("equals");
-        } else if (hasKey ? evt.key === "+" || evt.key === "Plus" : evt.keyCode === 171) {
-            btnClicker("plus");
+        if (hasKey ? evt.key === "=" || evt.key === "Equal" : evt.keyCode === 187) btnClicker("equals");
+        else if (hasKey ? evt.key === "Enter" : evt.keyCode === 13) btnClicker("equals");
+        else if (hasKey ? evt.key === "+" || evt.key === "Plus" : evt.keyCode === 171) btnClicker("plus");
+        else if (hasKey ? evt.key === "1" || evt.key == "Digit1" || evt.code == "Digit1" : evt.keyCode === 49) btnClicker("one");
+        else if (hasKey ? evt.key === "2" || evt.key == "Digit2" || evt.code == "Digit2" : evt.keyCode === 50) btnClicker("two");
+        else if (hasKey ? evt.key === "3" || evt.key == "Digit3" || evt.code == "Digit3" : evt.keyCode === 51) btnClicker("three");
+        else if (hasKey ? evt.key === "4" || evt.key == "Digit4" || evt.code == "Digit4" : evt.keyCode === 52) btnClicker("four");
+        else if (hasKey ? evt.key === "5" || evt.key == "Digit5" || evt.code == "Digit5" : evt.keyCode === 53) btnClicker("five");
+        else if (hasKey ? evt.key === "6" || evt.key == "Digit6" || evt.code == "Digit6" : evt.keyCode === 54) btnClicker("six");
+        else if (hasKey ? evt.key === "7" || evt.key == "Digit7" || evt.code == "Digit7" : evt.keyCode === 55) btnClicker("seven");
+        else if (hasKey ? evt.key === "8" || evt.key == "Digit8" || evt.code == "Digit8" : evt.keyCode === 56) btnClicker("eight");
+        else if (hasKey ? evt.key === "9" || evt.key == "Digit9" || evt.code == "Digit9" : evt.keyCode === 57) btnClicker("nine");
+        else if (hasKey ? evt.key === "0" || evt.key == "Digit0" || evt.code == "Digit0" : evt.keyCode === 48) btnClicker("zero");
+        else {
+            console.log("not escape!", evt);
         }
-        // key: '1', code: 'Digit1'
-        // key: '2', code: 'Digit2'
-        // key: '3', code: 'Digit3'
-        // key: '4', code: 'Digit4'
-        // key: '5', code: 'Digit5'
-        // key: '6', code: 'Digit6'
-        // key: '7', code: 'Digit7'
-        // key: '8', code: 'Digit8'
-        // key: '9', code: 'Digit9'
-        // key: '0', code: 'Digit0'
-
-        console.log("not escape!", evt);
     }
 };
