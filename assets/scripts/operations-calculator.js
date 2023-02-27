@@ -12,7 +12,7 @@ for (var i = 0; i < buttons.length; i++) {
             display.innerHTML = "";
             decimalButtonState = false;
         } else if (btnVal == "⌫") {
-            if (display.innerHTML.length > 0) display.innerHTML.substr(0, display.innerHTML.length - 1);
+            if (display.innerHTML.length > 0) display.innerHTML = display.innerHTML.substr(0, display.innerHTML.length - 1);
 
         } else if (btnVal == "=") {
             var operatorSolution = inputVal;
