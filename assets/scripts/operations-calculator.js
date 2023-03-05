@@ -89,6 +89,7 @@ window.onkeydown = evt => {
     else if (hasKey ? evt.key === "0" || evt.key == "Digit0" || evt.code == "Digit0" : evt.keyCode === 48) btnClicker("zero");
     
     else if (hasKey ? evt.key === "/" || evt.key == "Slash" || evt.code == "Slash" : evt.keyCode === 191) btnClicker("divide");
+    else if (hasKey ? evt.key === "-" || evt.key == "Minus" || evt.code == "Minus" : evt.keyCode === 191) btnClicker("minus");
 
 
     else {
