@@ -36,8 +36,13 @@ body {
 }
 
 .neumorphic:hover {
-    box-shadow: inset 5px 5px 5px 0 var(--dark-high-light), inset -5px -5px 5px 0 var(--soft-high-light);
+    /* box-shadow: inset 5px 5px 5px 0 var(--dark-high-light), inset -5px -5px 5px 0 var(--soft-high-light); */
+    background: var(--soft-high-light);
     color: var(--secondary-font-color);
+}
+
+.neumorphic:active {
+    box-shadow: inset 5px 5px 5px 0 var(--dark-high-light), inset -5px -5px 5px 0 var(--soft-high-light);
 }
 
 .calculator {
