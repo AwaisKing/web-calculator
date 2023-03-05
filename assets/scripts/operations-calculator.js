@@ -2,11 +2,17 @@ var display = document.querySelector(".display");
 var buttons = document.querySelectorAll("span");
 var operators = ["+", "-", "x", "÷"];
 var decimalButtonState = false;
+var isEqualed = false;
 
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].onclick = function (preventPageChange) {
         var inputVal = display.innerHTML;
         var btnVal = this.innerHTML;
+
+        if (btnVal != "=" && isEqualed) {
+            display.innerHTML = '';
+            isEqualed = false;
+        }
 
         if (btnVal == "C") {
             display.innerHTML = "";
@@ -25,6 +31,7 @@ for (var i = 0; i < buttons.length; i++) {
 
             if (operatorSolution) display.innerHTML = eval(operatorSolution);
 
+            isEqualed = true;
             decimalButtonState = false;
         } else if (operators.indexOf(btnVal) > -1) {
             var lastChar = inputVal[inputVal.length - 1];
