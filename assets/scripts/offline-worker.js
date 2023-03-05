@@ -24,12 +24,13 @@
 
 
 const PrecacheConfig              = [
-    ['index.html', 'ca867e1db175eb176dbea261a25fc103'],
-    ['pictures/solar-dehydrator.jpg', '3a5d3c85528026cc7ded9e32ea15a4fd'],
-    ['scripts/offline-manager.js', 'd2b04cba2f0c3d1f55a430da0aa4c9e1'],
-    ['scripts/script.js', 'c79eb4f231af6857e8014022aa4255b3'],
-    ['themes/mozilla/styles/reset.css', '1af6e7195d3c3b12c9af786afa4c7b5a'],
-    ['themes/mozilla/styles/style.css', '58d6c13089c40d858c3ba0db85438fcc'],
+    ["index.html", "af9d0c6fd97447972ebfe8802c44c85e"],
+
+    ["assets/style/calculator-style.css", "975047a7fff685ce74f8dcf729e223b8"],
+
+    ["assets/scripts/change-calculator-theme.js", "e3171218ba25f87730a176fe0fc9ef5b"],
+    ["assets/scripts/operations-calculator.js", "0f464f35b460f8190c0214517e1ce007"],
+    ["assets/scripts/offline-register.js", "8312bd94025cb4c84b41ec4a78487067"],
 ];
 const CacheNamePrefix             = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
 const IgnoreUrlParametersMatching = [/./];
