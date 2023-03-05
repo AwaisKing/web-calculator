@@ -30,7 +30,8 @@ const PrecacheConfig              = [
 
     ["assets/scripts/change-calculator-theme.js", "e3171218ba25f87730a176fe0fc9ef5b"],
     ["assets/scripts/operations-calculator.js", "0f464f35b460f8190c0214517e1ce007"],
-    ["assets/scripts/offline-register.js", "8312bd94025cb4c84b41ec4a78487067"],
+
+    ["offline-register.js", "8312bd94025cb4c84b41ec4a78487067"],
 ];
 const CacheNamePrefix             = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
 const IgnoreUrlParametersMatching = [/./];
